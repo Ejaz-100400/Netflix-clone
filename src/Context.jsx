@@ -1,7 +1,9 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 const Context = React.createContext()
 import { useParams } from "react-router-dom";
 function ContextProvider({children}){
+    const location = useLocation();
     // getting the movie datas 
     const[movie,setmovie]=React.useState([])
 
@@ -36,12 +38,22 @@ function ContextProvider({children}){
 
 
     // display random movie details in the main page
-    React.useEffect(() => {
-        if (movie.length > 0) {
-          const randomIndex = Math.floor(Math.random() * movie.length);
-          setRandomItem(movie[randomIndex]);
+    React. useEffect(() => {
+        if (location.pathname === "/browse" && movie.length > 0) {
+            const randomIndex = Math.floor(Math.random() * movie.length);
+            setRandomItem(movie[randomIndex]);
+          }
+        if (location.pathname === "/browse/tvshows" && movie.length > 0) {
+            const shows = movie.filter((show)=>show.type==='Series')
+            const randomIndex = Math.floor(Math.random() * shows.length);
+            setRandomItem(shows[randomIndex]);
+          }
+        if (location.pathname === "/browse/movies" && movie.length > 0) {
+            const movi = movie.filter((mov)=>mov.type==='Movies')  
+           const randomIndex = Math.floor(Math.random() * movi.length);
+          setRandomItem(movi[randomIndex]);
         }
-      }, [movie]);
+      }, [location.pathname, movie]);
 
 
     // getting the videourl 

@@ -13,7 +13,7 @@ export default function HomeTiles(){
 // Upcoming - divide those series/movies based on the category
 // Upcoming - display top 10 movies with number aside and image should be portrait in TOP10
 
-const homeelements = movie.sort((a,b) => a._id - b._id).map((movie)=>{
+const homelements = movie.sort((a,b) => a._id - b._id).map((movie)=>{
   return(
     <SwiperSlide>
         <TrendingTiles key={movie._id}
@@ -21,6 +21,28 @@ const homeelements = movie.sort((a,b) => a._id - b._id).map((movie)=>{
             </SwiperSlide>
     )
 })
+
+const showselements = movie.filter(mov=>mov.type ==='Series')
+.map((mov) =>{
+  return(
+    <SwiperSlide>
+        <TrendingTiles key={mov._id}
+        {...mov}/>
+            </SwiperSlide>
+    )
+})
+
+const movielements = movie.filter(mov=>mov.type ==='Movies')
+.map((mov) =>{
+  return(
+    <SwiperSlide>
+        <TrendingTiles key={mov._id}
+        {...mov}/>
+            </SwiperSlide>
+    )
+})
+
+
 const topelements = movie
   .filter(mov=>mov.tilecategory ==='Trending Now')
   .sort((a, b) => a.top - b.top) // sort by desired property in ascending order
@@ -67,7 +89,13 @@ const topelements = movie
             }
         }}
       > 
-      {homeelements}
+      {window.location.pathname === '/browse'
+  ? homelements
+  : window.location.pathname === '/browse/tvshows'
+    ? showselements
+    : window.location.pathname === '/browse/movies'
+      ? movielements
+      : ''}
                 </Swiper>
                 {/* New Releases */}
                 <h4 className="movietile-categoryname text-light fw-bold">New Releases</h4>
@@ -102,7 +130,13 @@ const topelements = movie
             }
         }}
       > 
-      {homeelements}
+      {window.location.pathname === '/browse'
+  ? homelements
+  : window.location.pathname === '/browse/tvshows'
+    ? showselements
+    : window.location.pathname === '/browse/movies'
+      ? movielements
+      : ''}
                 </Swiper>
                 {/* My List */}
                 <h4 className="movietile-categoryname text-light fw-bold">My List</h4>
@@ -137,7 +171,13 @@ const topelements = movie
             }
         }}
       > 
-      {homeelements}
+      {window.location.pathname === '/browse'
+  ? homelements
+  : window.location.pathname === '/browse/tvshows'
+    ? showselements
+    : window.location.pathname === '/browse/movies'
+      ? movielements
+      : ''}
                 </Swiper>
                  {/* Top 10 Shows on India Today */}
                 <h4 className="movietile-categoryname text-light fw-bold pt-2">Top 10 Shows on India Today</h4>
@@ -202,7 +242,13 @@ const topelements = movie
            },
        }}
       > 
-      {homeelements}
+      {window.location.pathname === '/browse'
+  ? homelements
+  : window.location.pathname === '/browse/tvshows'
+    ? showselements
+    : window.location.pathname === '/browse/movies'
+      ? movielements
+      : ''}
                 </Swiper>
             </div>
         </main>
