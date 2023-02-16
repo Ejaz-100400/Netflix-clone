@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 const Context = React.createContext()
 import { useParams } from "react-router-dom";
+
 function ContextProvider({children}){
     const location = useLocation();
     // getting the movie datas 
@@ -31,7 +32,7 @@ function ContextProvider({children}){
 
 
     React.useEffect(()=>{
-        fetch('http://localhost:7001/shows')
+        fetch('/api/shows')
         .then(response=>response.json())
         .then(data=>setmovie(data.trendingnow))
     },[])

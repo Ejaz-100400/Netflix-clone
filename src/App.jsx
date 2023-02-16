@@ -3,9 +3,7 @@ import Login from './Components/Login/Login'
 import Home from './Components/Home/Home'
 import Playvideo from './Components/Playvideo/Playvideo'
 import {Routes,Route} from 'react-router-dom'
-
 function App() {
-
   return (
     <div className="App">
       <Routes>
