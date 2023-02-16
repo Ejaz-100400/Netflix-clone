@@ -6,10 +6,10 @@ export default function TopTiles(props){
     const {Toggle,displayMovieDetails,addmovietolist,removetolist}=React.useContext(Context);
     return(
         <>
-        <div className="position-relative toptile-item d-flex align-items-center pt-4" id={props._id}>
+        <div className="position-relative toptile-item d-flex align-items-center pt-4 py-5" id={props._id}>
             <div className="toptile-main">
             <div className="position-absolute top-no">
-            <h1 className="skeleton skeleton-text">{props.top}</h1>
+            <h1 className="skeleton skeleton-text">{props.top?props.top:props.topmovie}</h1>
             </div>
             <div className="skeleton-portrait">
             <img src={props.topbanner} alt=""  width='150' className="top-banner"/> 
@@ -30,15 +30,15 @@ export default function TopTiles(props){
                                                 <i class="ri-play-circle-fill"></i>
                                                 <div onClick={()=>setlist(prev=>!prev)} className='list-check'>
                                                     {
-                                                        list?<i class="fa-solid fa-check text-light" onClick={()=>removetolist(props._id)}></i>:<i class="ri-add-line"onClick={()=>addmovietolist(props)}></i>
+                                                        list?<i class="fa-solid fa-check text-light" onClick={()=>removetolist(props._id)}></i>:<i class="ri-add-line text-light"onClick={()=>addmovietolist(props)}></i>
                                                     }
                                                 </div>
-                                                <i class="ri-thumb-up-line"></i>
+                                                <i class="ri-thumb-up-line text-light"></i>
                                             </div>
                                             {/* <Link to={`/browse/moviedetails/${props._id}`}>
                                             <i className="fa-solid fa-chevron-down" onClick={()=>displayMovieDetails(props)}></i>
                                             </Link> */}
-                                             <i className="fa-solid fa-chevron-down" onClick={()=>displayMovieDetails(props)}></i>
+                                             <i className="fa-solid fa-chevron-down text-light" onClick={()=>displayMovieDetails(props)}></i>
                                         </div>
                                         <div className='desc-content d-flex gap-1'>
                                             <span className='text-success'>96%match</span>

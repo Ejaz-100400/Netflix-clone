@@ -46,6 +46,10 @@ const movieSchema = new Schema({
         type:Number,
         required: true
     },
+    topmovie:{
+        type:Number,
+        required: true,
+    },
     topbanner:{
         type:String,
         required: true

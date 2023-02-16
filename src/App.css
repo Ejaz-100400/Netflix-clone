@@ -722,7 +722,7 @@ border-top-right-radius: 4px;
   height:100%;
   top:0px;
   right:0px;
-  border-radius:10px;
+  border-radius:0px;
 }
 
 
@@ -737,7 +737,7 @@ border-top-right-radius: 4px;
 
 }
 .top-no>h1{
-  font-size: 80px;
+  font-size: 100px;
 }
 
 /* UPCOMING - MUST CREATE A RESPONSIVE FOR TOP TILE */
@@ -937,4 +937,12 @@ input[type="text"] {
   color: #ffffff;
   transition: all 0.25s ease-in;
   padding:0px 7px;
+}
+
+
+/* NEW & POPULAR */
+.new-section{
+  min-height:100vh;
+  background-color: #171717;
+  padding-top:100px;
 }
