@@ -55,7 +55,7 @@ const movieSchema = new Schema({
         required: true
     }
 })
-module.exports=mongoose.model('trendingnowtile',movieSchema,'trendingnowtile');
+module.exports=mongoose.model('Netflix',movieSchema,'Netflix');
 
 
 

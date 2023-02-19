@@ -1,12 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 export default function Login(){
-    const[emailstate,setemailstate]=React.useState(false);
+  const[email,setemail]=React.useState('')
+  const[alertemail,setalertemail] = React.useState(false)
+  function handleemail(event){
+    const value = event.target.value;
+    setemail(value);
+    if(value==='' ||(!/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i.test(value))){
+      setalertemail(true)
+    }
+    else{
+      setalertemail(false)
+    }
+  }
     return(
         <div>
         <header className="d-flex position-absolute justify-content-between align-items-center container-fluid pl-2 pr-2">
           <div className="netflix-logo">
-              <Link to='/home'>
+              <Link to='/'>
                 <img src="/assets/img/netflixlogo.png" className="netflix" />
               </Link>
           </div>
@@ -18,7 +29,9 @@ export default function Login(){
               <option name="English">English</option>
               <option name="English">हिन्दी</option>
             </select>
-            <input type="button" defaultValue="Sign In" className="btn sign-in" />
+            <Link to='/login' className="btn sign-in text-decoration-none">
+            <input type="button" defaultValue="Sign In" style={{backgroundColor:'#E50914',border:'none',color:'white'}}/>
+            </Link>
           </div>
         </header>
         {/* MAIN HOME PG */}
@@ -32,7 +45,7 @@ export default function Login(){
             <div className="form-group d-flex align-items-center justify-content-center mt-3">
               <div className="form-floating">
                 <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com"  
-                name='email' required/>
+                name='email' value={email} onChange={handleemail} onBlue={handleemail} required/>
                 <label htmlFor="floatingInput">Email address</label>
               </div>
               <button type="submit" className="btn getstarted">
@@ -41,7 +54,7 @@ export default function Login(){
                 </Link>
                </button>
             </div>
-            <label htmlFor="warning" className='text-warning pt-3'>Email id is required</label>
+            <label htmlFor="warning" className='text-warning pt-3'style={{opacity:alertemail?'1':'0'}}>Please enter a valid email address</label>
           </div>
         </main>
         <div className="bor" />

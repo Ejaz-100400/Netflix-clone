@@ -1,5 +1,6 @@
 import './App.css'
-import Login from './Components/Login/Login'
+import LoginHomePage from './Components/Login/LoginHomePage'
+import LoginPg from './Components/Login/LoginPg'
 import Home from './Components/Home/Home'
 import Playvideo from './Components/Playvideo/Playvideo'
 import {Routes,Route} from 'react-router-dom'
@@ -7,7 +8,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route exact path='/' element={<Login/>}/>
+        <Route exact path='/' element={<LoginHomePage/>}/>
+        <Route exact path='/login' element={<LoginPg/>}/>
         <Route path='/browse/*' element={<Home/>}/>
         <Route path={`/playvideo/:id`} element={<Playvideo/>} />
       </Routes>

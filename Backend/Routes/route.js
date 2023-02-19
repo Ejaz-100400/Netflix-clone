@@ -1,5 +1,5 @@
 const express = require('express');
-const trendingnowvideotilecontroller =require('../Controllers/trendingnowtile')
+const trendingnowvideotilecontroller =require('../Controllers/Netflix')
 const router = express.Router();
 
 router.get('/shows',trendingnowvideotilecontroller.displaymovie);

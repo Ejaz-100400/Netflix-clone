@@ -1,7 +1,7 @@
-const Trendingnowtile = require('../Models/trendingnowtile.js')
+const Netflix = require('../Models/Netflix.js')
 const fs = require('fs')
 exports.displaymovie=(req,res)=>{
-    Trendingnowtile.find()
+    Netflix.find()
     .then(result=>{
         res.status(200).json({
             trendingnow:result
@@ -14,7 +14,7 @@ exports.displaymovie=(req,res)=>{
 }
 
 exports.playmovietile = (req, res) => {
-    Trendingnowtile.findById(req.params._id)
+    Netflix.findById(req.params._id)
     .then((result)=>{
         let range =req.headers.range;
         if(!range){

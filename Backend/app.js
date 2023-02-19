@@ -23,10 +23,10 @@ app.use('/', routes);
 //     })
 // );
 
-mongoose.connect('mongodb://127.0.0.1:27017/Netflix', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://Ejaz-100400:Jazir%4010420@cluster0.f945lsw.mongodb.net/Netflix_data?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(client => {
-        app.listen(7001, 'localhost', () => {
-            console.log(`listening on http://localhost:${7001}`)
+        app.listen(3000, 'localhost', () => {
+            console.log(`listening on http://localhost:${3000}`)
         });
         var conn = mongoose.connection;
         conn.on('connected', function () {

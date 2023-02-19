@@ -3,7 +3,7 @@ import { Context } from "../../Context";
 import { Link } from "react-router-dom";
 export default function TopTiles(props){
     const[list,setlist]=React.useState(false)
-    const {Toggle,displayMovieDetails,addmovietolist,removetolist}=React.useContext(Context);
+    const {Toggle,displayMovieDetails,addmovietolist,removetolist,playVideo}=React.useContext(Context);
     return(
         <>
         <div className="position-relative toptile-item d-flex align-items-center pt-4 py-5" id={props._id}>
@@ -27,7 +27,9 @@ export default function TopTiles(props){
            <div className="movietile-item-show  py-1">
             <div className="movietile-desc d-flex align-items-center justify-content-between px-2">
             <div className="desc-icons d-flex gap-2 align-items-center">
+            <Link to={`/playvideo/${props._id}`} className="text-decoration-none text-dark" onClick={()=>playVideo(props._id)}>
                                                 <i class="ri-play-circle-fill"></i>
+                                            </Link>
                                                 <div onClick={()=>setlist(prev=>!prev)} className='list-check'>
                                                     {
                                                         list?<i class="fa-solid fa-check text-light" onClick={()=>removetolist(props._id)}></i>:<i class="ri-add-line text-light"onClick={()=>addmovietolist(props)}></i>
