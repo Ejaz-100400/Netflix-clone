@@ -34,9 +34,8 @@ function ContextProvider({children}){
     React.useEffect(()=>{
         fetch('/api/shows')
         .then(response=>response.json())
-        .then(data=>setmovie(data.trendingnow))
+        .then(data=>setmovie(data.Netflix))
     },[])
-
 
     // display random movie details in the main page
     React. useEffect(() => {

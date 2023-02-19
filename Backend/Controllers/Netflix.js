@@ -1,10 +1,11 @@
 const Netflix = require('../Models/Netflix.js')
 const fs = require('fs')
+
 exports.displaymovie=(req,res)=>{
     Netflix.find()
     .then(result=>{
         res.status(200).json({
-            trendingnow:result
+            Netflix:result
         })
     }).catch(err=>{
         res.status(400).json({
@@ -12,6 +13,7 @@ exports.displaymovie=(req,res)=>{
         });
     })
 }
+
 
 exports.playmovietile = (req, res) => {
     Netflix.findById(req.params._id)

@@ -36,9 +36,9 @@ export default function Moviedetails(){
                 <div className="movie-details-video skeleton-moviebanner">
                 {
                     moviedetailvol?<video autoPlay loop muted className='movie-videobanner'>
-                    <source src={`http://localhost:7001/shows/${movie._id}`} />
+                    <source src={`http://localhost:3000/shows/${movie._id}`} />
                 </video>:<video autoPlay loop  className='movie-videobanner'>
-                    <source src={`http://localhost:7001/shows/${movie._id}`} />
+                    <source src={`http://localhost:3000/shows/${movie._id}`} />
                 </video>
                 }
 
