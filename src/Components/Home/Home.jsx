@@ -10,7 +10,6 @@ import Search from './Search/Search'
 import Moviedetails from './Moviedetails'
 
 import { Route,Routes } from 'react-router-dom'
-
 export default function Home(){
     return(
         <div className="netflix-userhomepage-section position-relative">
