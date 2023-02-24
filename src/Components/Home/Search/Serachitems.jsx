@@ -5,6 +5,8 @@ import { Context } from "../../../Context";
 export default function Searchitems(props){
     const[list,setlist]=React.useState(false)
     const {Toggle,displayMovieDetails,addmovietolist,removetolist,playVideo}=React.useContext(Context);
+    
+    
     return(
         <>
             <div className="movitile-item position-relative"   onClick={()=>Toggle(props._id)}>
