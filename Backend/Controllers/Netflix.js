@@ -39,3 +39,17 @@ exports.playmovietile = (req, res) => {
         videoStream.pipe(res);
     })
 }
+
+exports.searchmovie=(req,res)=>{
+    var RegEx = new RegExp(req.params.moviename, 'i');
+    Netflix.find({"moviename":RegEx})
+    .then(result=>{ 
+        res.status(200).json({
+            Netflixsearch:result
+        })
+    }).catch(err=>{
+        res.status(400).json({
+            error:err
+        });
+    })
+}

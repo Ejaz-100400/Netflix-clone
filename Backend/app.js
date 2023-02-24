@@ -1,9 +1,9 @@
 var express = require('express');
 var bodyparser = require('body-parser');
+const serverless = require('serverless-http');
 const mongoose = require('mongoose');
-const cors = require('cors')
 mongoose.set('strictQuery', false);
-const routes = require('./Routes/route.js');
+const routes = require('./Routes/route');
 const app = express();
 
 app.use((req, res, next) => {
@@ -14,9 +14,7 @@ app.use((req, res, next) => {
 })
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use('/', routes);
-app.use(cors({
-    origin:"https://backenddata-t4th.onrender.com"}));
-mongoose.set('strictQuery', false);
+module.exports.handler = serverless(app);
 
 mongoose.connect('mongodb+srv://Ejaz-100400:Jazir%4010420@cluster0.f945lsw.mongodb.net/Netflix_data?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(client => {

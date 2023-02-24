@@ -46,8 +46,8 @@
   z-index:4;
 }
 .skeleton-text::before{
-  height:5.4rem;
-  width:3rem;
+  height:6.4rem;
+  width:3.5rem;
 }
 @keyframes skeleton-loading {
   0%{
@@ -431,8 +431,6 @@ padding:10px 25px;
 }
 
 /* LOGIN COMPONENT */
-.loginscreen{
-}
 .login-section{
   position:absolute;
   top:50%;
@@ -631,7 +629,6 @@ width:100%;
   overflow-x: hidden;
 }
 .netflix-movie-tiles{
-  min-height: 130vh;
   background-color:#171717;
 }
 .netflix-movie-tiles>div{

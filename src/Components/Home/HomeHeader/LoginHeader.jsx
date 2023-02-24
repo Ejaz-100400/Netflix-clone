@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from '/public/assets/img/netflixlogo.png'
 import { Link } from 'react-router-dom' 
-import Search from './Search'
+import SearchBar from './SearchBar'
 export default function LoginHeader(){
     const [mobbrowse,setmobbrowse]=React.useState(false)
     React.useEffect(() => {
@@ -51,7 +51,9 @@ export default function LoginHeader(){
                     </div>
                     <div className='position-absolute header-right'>
                         <div className='header-right d-flex align-items-center gap-4 position-relative'>
-                        <Search/>
+                        <Link to={'/browse/search'}>
+                        <SearchBar/>
+                        </Link>
                         <span>Children</span>
                         <i className="fa-regular fa-bell fa-1x"></i>
                         <img src="https://occ-0-5559-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABZBe7K0DPia9LvzIkQ4yzqX9NocZlAjS1MOyEuBQD1WmFuLKZwvq0bxc4n4_EV73khqgwed0PYLNml0V8LCymt31e7x-8jQ.png?r=229" alt=""
@@ -86,7 +88,9 @@ export default function LoginHeader(){
                     <div className='position-absolute header-right'>
                         <div className='header-right d-flex align-items-center gap-4'>
                         {/* <i className='fa-solid fa-search fa-1x'></i> */}
-                        <Search/>
+                        <Link to={'/browse/search'}>
+                        <SearchBar/>
+                        </Link>
                         <i className="fa-regular fa-bell fa-1x"></i>
                         <img src="https://occ-0-5559-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABZBe7K0DPia9LvzIkQ4yzqX9NocZlAjS1MOyEuBQD1WmFuLKZwvq0bxc4n4_EV73khqgwed0PYLNml0V8LCymt31e7x-8jQ.png?r=229" alt=""
                          width='30' style={{borderRadius:'6px'}}/>

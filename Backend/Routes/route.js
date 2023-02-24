@@ -4,4 +4,5 @@ const router = express.Router();
 
 router.get('/shows',trendingnowvideotilecontroller.displaymovie);
 router.get('/shows/:_id',trendingnowvideotilecontroller.playmovietile)
+router.get('/shows/search/:moviename',trendingnowvideotilecontroller.searchmovie)
 module.exports =router;

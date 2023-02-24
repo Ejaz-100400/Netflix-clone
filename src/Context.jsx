@@ -30,6 +30,9 @@ function ContextProvider({children}){
     // set state for adding the movie to the list 
     const[addmovielist,setaddmovielist]=React.useState([])
 
+    // SEARCH COMPONENT 
+    const [query, setQuery] = React.useState('');
+    const[searchdata,setsearchdata]=React.useState([])
 
     React.useEffect(()=>{
         fetch('/api/shows')
@@ -37,7 +40,10 @@ function ContextProvider({children}){
         .then(data=>setmovie(data.Netflix))
     },[])
 
-    // display random movie details in the main page
+
+
+
+  // display random movie details in the main page
     React. useEffect(() => {
         if (location.pathname === "/browse" && movie.length > 0) {
             const randomIndex = Math.floor(Math.random() * movie.length);
@@ -55,7 +61,7 @@ function ContextProvider({children}){
         }
       }, [location.pathname, movie]);
 
-
+    
     // getting the videourl 
     function playVideo(id) {
         const extractVideoUrl = movie.map(mov => mov._id);
@@ -110,7 +116,13 @@ function ContextProvider({children}){
         setaddmovielist(prevmovie=>prevmovie.filter(movie=>movie._id !== id))
     }
 
-
+    //search movie 
+    function handleSearch(){
+        fetch(`http://localhost:3000/shows/search/${query}`)
+        .then(response=>response.json())
+        .then(data=>setsearchdata(data.Netflixsearch));
+    }
+    console.log(searchdata);
 
     // // console.log(addmovielist)
     // console.log(enablemoviedetail)
@@ -134,7 +146,11 @@ return(
         addmovietolist,
         addmovielist,
         removetolist,
-        randomItem
+        randomItem,
+        handleSearch,
+        query,
+        setQuery,
+        searchdata
     }}>
         {children}
     </Context.Provider>
