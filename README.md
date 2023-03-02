@@ -20,6 +20,9 @@ This is a Netflix clone website built with React, Node.js, and MongoDB. The webs
 The Netflix clone website has the following features:
 
 - Browse and search for movies and TV shows
+
+<img src='![image](https://user-images.githubusercontent.com/76722208/222393745-6c992ced-9cb8-4b81-a4eb-a892e07c3605.png)'>
+
 - Create and manage watchlists in list section
 - Responsive design for mobile and desktop devices
 
