@@ -14,7 +14,6 @@ which is more likely I've created same as Netflix
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [Contributing](#contributing)
 - [Features to be Improved](#features-to-be-improved)
 
 ## Features
