@@ -6,3 +6,14 @@
 
 This is a Netflix clone website built with React, Node.js, and MongoDB. The website allows users to browse and watch movies and TV shows and created a Netflix clone 
 which is more likely I've created same as Netflix
+
+
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
