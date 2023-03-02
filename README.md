@@ -22,11 +22,8 @@ which is more likely I've created same as Netflix
 
 The Netflix clone website has the following features:
 
-- User authentication and authorization
 - Browse and search for movies and TV shows
-- Create and manage watchlists
-- Rate and review movies and TV shows
-- Watch trailers and preview videos
+- Create and manage watchlists in list section
 - Responsive design for mobile and desktop devices
 
 ## Technologies Used
@@ -38,10 +35,10 @@ The Netflix clone website was built using the following technologies:
 - MongoDB: A NoSQL document-oriented database
 - Express: A minimal and flexible Node.js web application framework
 - Mongoose: A MongoDB object modeling tool for Node.js
-- JWT: A JSON Web Token implementation for user authentication
 - Axios: A promise-based HTTP client for making API requests
 - React Router: A routing library for React
-- Material UI: A React UI framework for building responsive and mobile-first websites
+- -Swiper Js: A JavaScript library that creates modern touch sliders with hardware-accelerated transitions 
+- Bootstrap: A CSS framework. Much easier to use because it has a comprehensive grid system with many elements already built.
 
 ## Getting Started
 
