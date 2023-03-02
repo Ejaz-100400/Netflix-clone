@@ -23,8 +23,17 @@ The Netflix clone website has the following features:
 
 <img src='https://user-images.githubusercontent.com/76722208/222393745-6c992ced-9cb8-4b81-a4eb-a892e07c3605.png'>
 
+<img src='https://user-images.githubusercontent.com/76722208/222394471-3097a894-cca8-4db3-9257-ff6015425424.png'>
+
 - Create and manage watchlists in list section
-- Responsive design for mobile and desktop devices
+ 
+ <img src='https://user-images.githubusercontent.com/76722208/222394774-86212a9c-cf02-4119-aaef-78465ab9fe98.png'>
+ 
+- Streaming videos when displaying moviedetails and when user clicks play button 
+
+ <img src='https://user-images.githubusercontent.com/76722208/222395325-26b2d1f1-2426-4d53-9f6f-2baf6d1301ca.png'>
+
+
 
 ## Technologies Used
 
