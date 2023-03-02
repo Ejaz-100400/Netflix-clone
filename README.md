@@ -71,3 +71,4 @@ Currently planning to improve features like
 2. Responsive in some section in this website
 3. Personalized recommendations based on user preferences
 4. Improved search functionality and adding filter preferences 
+5. Have to add more datas and customize based on user preferences
