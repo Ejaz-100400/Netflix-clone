@@ -16,6 +16,7 @@ which is more likely I've created same as Netflix
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+- [Features to be improved](#Features to be improved)
 
 
 ## Features
@@ -53,3 +54,10 @@ To get started with the Netflix clone website, follow these steps:
 
 Once the Netflix clone website is up and running, users can browse movies and TV shows, search for specific titles, and watch trailers and preview videos. Users can also create and manage their own watchlists, rate and review content they have watched, and view other users' ratings and reviews.
 
+
+## Features to be improved 
+
+Currently planning to improve features like 
+
+1. User Authentication using Firebase 
+2. Responsive in some section in this website 
