@@ -15,8 +15,7 @@ which is more likely I've created same as Netflix
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [Features to be improved](#Features to be improved)
-
+- [Features to be Improved](#features-to-be-improved)
 
 ## Features
 
