@@ -5,33 +5,45 @@ export default function LoginPg(){
   const[pwd,setpwd]=React.useState('')
   const[alertemail,setalertemail] = React.useState(false)
   const[alertpwd,setalertpwd] = React.useState(false)
+  const[submit,setsubmit] = React.useState(false)
+  console.log(email)
 
+  // handling email filed
   function handleemail(event){
     const value = event.target.value;
     setemail(value);
     if(value==='' ||(!/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i.test(value))){
       setalertemail(true)
+      setsubmit(true);
     }
     else{
       setalertemail(false)
+      setsubmit(false);
     }
   }
+  //handling password field
   function handlepwd(event){
     const value = event.target.value;
     setpwd(value);
     if(value===''|| value.length<4){
       setalertpwd(true)
+      setsubmit(true);
     }
     else{
       setalertpwd(false);
+      setsubmit(false);
     }
   }
+  
+  //handling submit btn
   function handlesubmitbtn(e){
-    if(email && pwd){
-
+    e.preventDefault();
+    if(!alertemail && !alertpwd){  
+      const user=JSON.parse(window.sessionStorage.setItem('user',email)||'{}');
+      JSON.parse(user.window.sessionStorage.setItem('movie','') || '[]')
+      setsubmit(false);   
     }
   }
-  console.log(alertemail)
  
     return(
         <div className="loginscreen">
@@ -68,12 +80,15 @@ export default function LoginPg(){
                     </div>
                     <label htmlFor="warning" className='text-warning text-left py-2 alert-box mx-2'
                     style={{opacity:alertpwd?'1':'0'}}>Your password must contain between 4 and 60 characters.</label>
-                    
-                    <Link to='/browse' className="btn sign-in text-decoration-none w-100 py-3">
-                        <button style={{backgroundColor:'#E50914',border:'none',color:'white'}} className='fw-bold'>
+                    <div onClick={handlesubmitbtn}>
+                    <Link to='/browse' className={`btn sign-in text-decoration-none w-100 py-3 ${submit?'disabled':''}`} >
+                        <button style={{backgroundColor:submit?'transparent':'#E50914',border:'none',color:'white'}} className={`fw-bold ${submit?'disabled':''}`}
+                          >
                             Sign In
                         </button>
                     </Link>
+                    </div>
+                    
                     <div className="d-flex gap-2 align-items-center justify-content-center">
                     <span style={{color:'silver'}}>New to Netflix?</span><Link to='/' className="text-light mb-1 text-decoration-none"><span>Sign up Now</span></Link>
                     </div>

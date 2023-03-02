@@ -453,6 +453,15 @@ padding:10px 25px;
   border-radius:6px;
 }
 
+.disabled{
+  pointer-events: none;
+  opacity:0.4;
+}
+.manage-acc-sec{
+  right:20px;
+  top:40px;
+  cursor:pointer;
+}
 @media(max-width:997px){
   .login-section{
     width:90%;
@@ -967,8 +976,6 @@ input[type="text"] {
   position: relative;
   transition: all 0.2s ease-in;
   cursor: pointer;
-  /* width:250px; */
-  width:0px;
 }
 
 .search__icon {
@@ -988,4 +995,14 @@ input[type="text"] {
   min-height:100vh;
   background-color: #171717;
   padding-top:100px;
+}
+
+@media(max-width:768px){
+  .search-bar{
+    width:100%;
+  }
+  .search__icon {
+    width:24px;
+  }
+
 }

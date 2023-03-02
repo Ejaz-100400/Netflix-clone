@@ -34,6 +34,9 @@ function ContextProvider({children}){
     const [query, setQuery] = React.useState('');
     const[searchdata,setsearchdata]=React.useState([])
 
+    const [activityLog, setActivityLog] = React.useState([]);
+
+    console.log(activityLog)
     React.useEffect(()=>{
         fetch('/api/shows')
         .then(response=>response.json())
@@ -42,7 +45,7 @@ function ContextProvider({children}){
 
 
 
-
+ 
   // display random movie details in the main page
     React. useEffect(() => {
         if (location.pathname === "/browse" && movie.length > 0) {
@@ -93,6 +96,9 @@ function ContextProvider({children}){
     function displayMovieDetails(moviedetail){
         setenablemoviedetail(prev=>!prev)
         setdisplaymovie(prevmovie=>[...prevmovie,moviedetail]);
+        const movieTrack = JSON.parse(window.sessionStorage.getItem('movietrack') || '[]');
+        movieTrack.push(moviedetail.moviename);
+        window.sessionStorage.setItem('movietrack', JSON.stringify(movieTrack));
     }
     function clearmoviedetails(moviedetail){
         setenablemoviedetail(prev=>!prev)
@@ -110,10 +116,12 @@ function ContextProvider({children}){
     function addmovietolist(addmovie) {
         if (!addmovielist.some(movie => movie._id === addmovie._id)) {
           setaddmovielist(prevaddmov => [...prevaddmov, addmovie]);
+          window.localStorage.setItem('movietolist',addmovie.moviename)
         }
       }
     function removetolist(id){
         setaddmovielist(prevmovie=>prevmovie.filter(movie=>movie._id !== id))
+        window.localStorage.removeItem('movietolist',movie.moviename)
     }
 
     //search movie 
@@ -133,7 +141,7 @@ function ContextProvider({children}){
 return(
     <Context.Provider value=
     {{
-        movie,     
+        movie, 
         Toggle,
         playVideo,
         videourl,

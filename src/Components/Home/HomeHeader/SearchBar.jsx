@@ -23,7 +23,6 @@ export default function search(){
                 <input type="text" id="box" placeholder="Titles,genres...." class="search__box fw-normal" 
                 name='search' 
                 onChange={handleInputChange} 
-                onKeyPress={handleInputChange}
                 value={query}
                 style={{width:search?'300px':'0px'}}/>
             </div>

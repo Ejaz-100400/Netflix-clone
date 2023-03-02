@@ -4,7 +4,7 @@ import Listitem from './Listitem'
 import React from 'react';
 import { Context } from '../../../Context';
 export default function Tvshows(){
-    const {addmovielist}=React.useContext(Context);
+    const {addmovielist,activityLog}=React.useContext(Context);
     const Listelements = addmovielist.sort((a,b) => a._id - b._id).map((movie)=>{
         return(
               <Listitem key={movie._id}

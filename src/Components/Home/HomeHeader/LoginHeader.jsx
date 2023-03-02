@@ -3,6 +3,7 @@ import Logo from '/public/assets/img/netflixlogo.png'
 import { Link } from 'react-router-dom' 
 import SearchBar from './SearchBar'
 export default function LoginHeader(){
+    const [signout,setsignout] = React.useState(true)
     const [mobbrowse,setmobbrowse]=React.useState(false)
     React.useEffect(() => {
         window.onscroll=function(){
@@ -18,10 +19,14 @@ export default function LoginHeader(){
             }
         }
     },[])
+    function signoutacc(){
+        window.sessionStorage.removeItem('user');
+        window.sessionStorage.removeItem('movie');
+    }
     return(
         <>
         <div className='header-section position-fixed w-100 mb-3'>
-                <header className='header-container positon-absolute d-flex align-items-center gap4
+                <header className='header-container positon-absolute d-flex align-items-center justify-content-between
                 '>
                     <div className='header-left mx-3 d-flex align-items-center'>
                     <Link to='/browse'>
@@ -56,8 +61,24 @@ export default function LoginHeader(){
                         </Link>
                         <span>Children</span>
                         <i className="fa-regular fa-bell fa-1x"></i>
+                        <div className='position-relative'>
                         <img src="https://occ-0-5559-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABZBe7K0DPia9LvzIkQ4yzqX9NocZlAjS1MOyEuBQD1WmFuLKZwvq0bxc4n4_EV73khqgwed0PYLNml0V8LCymt31e7x-8jQ.png?r=229" alt=""
-                         width='30' style={{borderRadius:'6px'}}/>
+                         width='30' style={{borderRadius:'6px',cursor:'pointer'}}
+                         className="dropdown-toggle w-50 text-light" 
+                         type="button" id="dropdownMenuButton" data-toggle="dropdown" 
+                         aria-haspopup="true" aria-expanded="false"
+                         onMouseEnter={()=>setsignout(prevstate=>!prevstate)}
+                         />
+                         <div className='dropdown-menu  text-center manage-acc-sec bg-dark px-1 '
+                         style={{display:signout?'block':'none'}}onMouseLeave={()=>setsignout(prevstate=>!prevstate)}>
+                            <span className='text-light text-left d-block'>Account</span>
+                            <span className='text-light py-1 d-block'>Help Center</span>
+                            <hr  style={{color:'white'}}/>
+                            <Link to={'/login'} className='text-decoration-none'>
+                            <span className='text-light' onClick={signoutacc}>Sign out of Netflix</span>
+                            </Link>
+                         </div>
+                        </div>
                         </div>
                     </div>
                 </header>
@@ -92,12 +113,30 @@ export default function LoginHeader(){
                         <SearchBar/>
                         </Link>
                         <i className="fa-regular fa-bell fa-1x"></i>
+                        <div className='position-relative'>
                         <img src="https://occ-0-5559-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABZBe7K0DPia9LvzIkQ4yzqX9NocZlAjS1MOyEuBQD1WmFuLKZwvq0bxc4n4_EV73khqgwed0PYLNml0V8LCymt31e7x-8jQ.png?r=229" alt=""
-                         width='30' style={{borderRadius:'6px'}}/>
+                         width='30' style={{borderRadius:'6px',cursor:'pointer'}}
+                         className="dropdown-toggle w-50 text-light" 
+                         type="button" id="dropdownMenuButton" data-toggle="dropdown" 
+                         aria-haspopup="true" aria-expanded="false"
+                         onMouseEnter={()=>setsignout(prevstate=>!prevstate)}
+                         />
+                        <div className='dropdown-menu  text-center manage-acc-sec bg-dark px-1 '
+                         style={{display:signout?'block':'none'}}onMouseLeave={()=>setsignout(prevstate=>!prevstate)}>
+                            <span className='text-light text-left d-block'>Account</span>
+                            <span className='text-light  d-block'>Help Center</span>
+                            <hr  style={{color:'white'}}/>
+                            <Link to={'/login'} className='text-decoration-none'>
+                            <span className='text-light' onClick={signoutacc}>Sign out of Netflix</span>
+                            </Link>
+                         </div>
+                        </div>
+                       
                         </div>
                     </div>
                 </header>
         </div>
+        
         </>
     )
 }
