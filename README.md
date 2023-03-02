@@ -58,4 +58,6 @@ Once the Netflix clone website is up and running, users can browse movies and TV
 Currently planning to improve features like 
 
 1. User Authentication using Firebase 
-2. Responsive in some section in this website 
+2. Responsive in some section in this website
+3. Personalized recommendations based on user preferences
+4. Improved search functionality and adding filter preferences 
