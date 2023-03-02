@@ -36,7 +36,7 @@ The Netflix clone website was built using the following technologies:
 - Mongoose: A MongoDB object modeling tool for Node.js
 - Axios: A promise-based HTTP client for making API requests
 - React Router: A routing library for React
-- -Swiper Js: A JavaScript library that creates modern touch sliders with hardware-accelerated transitions 
+- Swiper Js: A JavaScript library that creates modern touch sliders with hardware-accelerated transitions 
 - Bootstrap: A CSS framework. Much easier to use because it has a comprehensive grid system with many elements already built.
 
 ## Getting Started
