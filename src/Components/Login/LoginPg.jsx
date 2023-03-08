@@ -6,7 +6,6 @@ export default function LoginPg(){
   const[alertemail,setalertemail] = React.useState(false)
   const[alertpwd,setalertpwd] = React.useState(false)
   const[submit,setsubmit] = React.useState(false)
-  console.log(email)
 
   // handling email filed
   function handleemail(event){
