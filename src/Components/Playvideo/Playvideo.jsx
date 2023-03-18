@@ -6,7 +6,7 @@ export default function Playvideo(){
     const{videourl}=React.useContext(Context)
     return(
         <div className="playvideo-component">
-            <ReactPlayer url={`http://localhost:3000/shows/${videourl}`}
+            <ReactPlayer url={`https://netflix-backendata.vercel.app/${videourl}`}
             loop='true'
             playing='true'
             controls='true'
