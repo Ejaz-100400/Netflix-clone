@@ -98,7 +98,7 @@ export default function LoginHeader(){
                         <div className="dropdown-menu bg-dark text-center" aria-labelledby="dropdownMenuButton"
                          style={{display:mobbrowse?'block':'none'}}onMouseLeave={()=>setmobbrowse(prevstate=>!prevstate)}>
                             <Link className="dropdown-item py-2" to='/browse'>Home</Link>
-                            <Link className="dropdown-item py-2" to='browse/tvshows'>TV shows</Link>
+                            <Link className="dropdown-item py-2" to='/browse/tvshows'>TV shows</Link>
                             <Link className="dropdown-item py-2" to='/browse/movies'>Movies</Link>
                             <Link className="dropdown-item py-2" to='/browse/new'>News & Popular</Link>
                             <Link className="dropdown-item py-2" to='/browse/list'>My Lists</Link>

@@ -13,7 +13,7 @@ export default function MainHero(){
     return(
         <>
         {/* Element section of Home Page */}
-        <main className='netflix-heropage skeleton-main'
+        <main className='netflix-heropage skeleton-moviebanner'
             // onMouseEnter={()=>setdisplayvdeo(prevstate=>!prevstate)}
             // onMouseLeave={()=>setdisplayvdeo(prevstate=>!prevstate)}
             style={{backgroundImage:displayvdeo?'none':`linear-gradient(to bottom, rgba(0, 0, 0, 0.574),rgba(0, 0, 0, 0.242),rgba(0,0,0,0.9)),url(${randomItem.mainbanner})`}}>
