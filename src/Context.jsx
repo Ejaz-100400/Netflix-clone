@@ -126,7 +126,7 @@ function ContextProvider({children}){
 
     //search movie 
     function handleSearch(){
-        fetch(`http://localhost:3000/shows/search/${query}`)
+        fetch(`/api/shows/search/${query}`)
         .then(response=>response.json())
         .then(data=>setsearchdata(data.Netflixsearch));
     }

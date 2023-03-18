@@ -14,22 +14,7 @@ export default function MainHero(){
         <>
         {/* Element section of Home Page */}
         <main className='netflix-heropage skeleton-moviebanner'
-            // onMouseEnter={()=>setdisplayvdeo(prevstate=>!prevstate)}
-            // onMouseLeave={()=>setdisplayvdeo(prevstate=>!prevstate)}
             style={{backgroundImage:displayvdeo?'none':`linear-gradient(to bottom, rgba(0, 0, 0, 0.574),rgba(0, 0, 0, 0.242),rgba(0,0,0,0.9)),url(${randomItem.mainbanner})`}}>
-                {/* {
-                    volume?<video autoPlay loop className='video-herobanner'  onMouseEnter={()=> playVideo(randomItem._id)}
-                    onMouseLeave={()=> playVideo(randomItem._id)}
-                    >
-                    <source src={`http://localhost:7001/shows/${videourl}`} />
-                </video>:<video autoPlay loop muted className='video-herobanner'  onMouseEnter={()=> playVideo(randomItem._id)}
-                    onMouseLeave={()=> playVideo(randomItem._id)}>
-                    <source src={`http://localhost:7001/shows/${videourl}`} />
-                </video> 
-                } */}
-
-
-
                 <div className='d-flex'>
                 <div className='netflix-heropage-moviemain position-absolute d-flex flex-column justify-content-end text-light'>
                     <h5>Netflix {randomItem.type}</h5>
@@ -48,15 +33,6 @@ export default function MainHero(){
                     </button>
                     </div>
                 </div>
-
-
-
-                {/* <div className='volume-controls position-absolute' onClick={()=>setvolume(prevstate=>!prevstate)}>
-                    {
-                        !volume?<i class="fa-solid fa-volume-xmark"></i>:<i class="fa-solid fa-volume-low"></i>
-                    }
-
-                </div> */}
                 </div>
         </main>
 
