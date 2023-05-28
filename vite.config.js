@@ -6,10 +6,23 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://netflix-backendata-tn34.vercel.app',
+        target: 'http://localhost:3000/shows',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },
 });
+
+// export default defineConfig({
+//   plugins: [react()],
+//   server: {
+//     proxy: {
+//       '/api': {
+//         target: 'http://netflix-backendata-tn34.vercel.app',
+//         changeOrigin: true,
+//         rewrite: (path) => path.replace(/^\/api/, ''),
+//       },
+//     },
+//   },
+// });
