@@ -38,7 +38,7 @@ function ContextProvider({children}){
 
     console.log(activityLog)
     React.useEffect(()=>{
-        fetch('/api/shows')
+        fetch('http://localhost:3001/shows')
         .then(response=>response.json())
         .then(data=>setmovie(data.Netflix))
     },[])
@@ -126,7 +126,7 @@ function ContextProvider({children}){
 
     //search movie 
     function handleSearch(){
-        fetch(`/api/shows/search/${query}`)
+        fetch(`http://localhost:3001/shows/${query}`)
         .then(response=>response.json())
         .then(data=>setsearchdata(data.Netflixsearch));
     }

@@ -6,7 +6,7 @@ export default function Playvideo(){
     const{videourl}=React.useContext(Context)
     return(
         <div className="playvideo-component">
-            <ReactPlayer url={`http://localhost:3000/shows/${videourl}`}
+            <ReactPlayer url={`http://localhost:3001/shows/${videourl}`}
             loop='true'
             playing='true'
             controls='true'
